@@ -35,7 +35,7 @@ const initialState = {
       userChoice: -1,
     },
   ],
-  userAnswer: [],
+
   displayQuestionNumber: 0,
 };
 
@@ -43,14 +43,6 @@ const quizReducer = createSlice({
   name: 'quiz',
   initialState: initialState,
   reducers: {
-    updateAnswer(state, action) {
-      const questionNumber = action.payload;
-      console.log(`questionNumber ${JSON.stringify(questionNumber, null, 4)}`);
-
-      if (!state.userAnswer.includes(questionNumber)) {
-        state.userAnswer.push(action.payload);
-      }
-    },
     displayQuestion(state, action) {
       state.displayQuestionNumber = action.payload;
     },

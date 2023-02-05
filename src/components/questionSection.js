@@ -6,8 +6,9 @@ import { useState } from 'react';
 const QuestionDisplay = ({ setShowResult }) => {
   const { displayQuestionNumber, questions, totalQuestions, userAnswer } =
     useSelector((state) => state);
+  const isAnswered = questions[displayQuestionNumber].userChoice != -1;
   const dispatch = useDispatch();
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(isAnswered);
 
   const AnswerOptions = ({ setSelected }) => {
     return (
@@ -20,11 +21,10 @@ const QuestionDisplay = ({ setShowResult }) => {
               label={option}
               labelPlacement="end"
               key={index}
-              onClick={(event) => {
+              onChange={(event) => {
                 dispatch(userChoice(event.target.value));
                 setSelected(true);
               }}
-              // defaultChecked={true}
             />
           );
         })}
@@ -39,12 +39,11 @@ const QuestionDisplay = ({ setShowResult }) => {
       <Button
         variant="contained"
         onClick={() => {
-          dispatch(updateAnswer(displayQuestionNumber));
-
           if (displayQuestionNumber != totalQuestions - 1)
             dispatch(displayQuestion(displayQuestionNumber + 1));
           else setShowResult(true);
-          setSelected(false);
+          // dispatch(updateAnswer(displayQuestionNumber));
+          // setSelected(false);
         }}
         style={{ width: '20%' }}
         disabled={!selected}

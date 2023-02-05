@@ -5,13 +5,16 @@ import { Button } from '@mui/material';
 
 const ToggleDisplay = () => {
   const { questions, userAnswer } = useSelector((state) => state);
+
   const dispatch = useDispatch();
 
   return (
     <div className="toggleSection">
       <div className="optionContainer">
         {questions.map((data, index) => {
-          const answered = userAnswer.includes(index);
+          // const answered = userAnswer.includes(index);
+          const answered = questions[index].userChoice != -1;
+
           return (
             <Button
               variant={answered ? 'contained' : 'outlined'}
