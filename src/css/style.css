@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+}
+.mainDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+}
+.questionSection {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(223, 203, 199);
+}
+.toggleSection {
+  width: 30%;
+  height: 100%;
+  background-color: rgb(223, 203, 0);
+  /* display: flex;
+  flex-direction: column; */
+}
+
+/* .iconsSize {
+  width: 100px;
+  height: 100px;
+}
+.iconsSize:hover {
+  border: 2px solid;
+  border-color: gray;
+} */
