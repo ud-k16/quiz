@@ -12,6 +12,7 @@ const Result = (props) => {
     });
     return correctAnswerByUser;
   };
+
   return (
     <>
       <div> Your Score</div>

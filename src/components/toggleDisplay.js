@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../css/style.css';
 import { displayQuestion } from '../store/reducer';
 import { Button } from '@mui/material';
+
 const ToggleDisplay = () => {
   const { questions, userAnswer } = useSelector((state) => state);
   const dispatch = useDispatch();

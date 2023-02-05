@@ -1,18 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  Button,
-  Radio,
-  FormControl,
-  RadioGroup,
-  FormControlLabel,
-  FormLabel,
-} from '@mui/material';
+import { Button, Radio, FormControl, FormControlLabel } from '@mui/material';
 import { displayQuestion, updateAnswer, userChoice } from '../store/reducer';
+
 const QuestionDisplay = ({ setShowResult }) => {
   const { displayQuestionNumber, questions, totalQuestions } = useSelector(
     (state) => state
   );
   const dispatch = useDispatch();
+
   const AnswerOptions = () => {
     return (
       <FormControl>
@@ -32,6 +27,7 @@ const QuestionDisplay = ({ setShowResult }) => {
       </FormControl>
     );
   };
+
   return (
     <div className="questionSection">
       <div>{questions[displayQuestionNumber].question}</div>

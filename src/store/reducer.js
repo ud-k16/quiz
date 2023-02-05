@@ -56,13 +56,6 @@ const quizReducer = createSlice({
     },
     userChoice(state, action) {
       state.questions[state.displayQuestionNumber].userChoice = action.payload;
-      console.log(
-        `${JSON.stringify(
-          state.questions[state.displayQuestionNumber].userChoice,
-          null,
-          4
-        )}`
-      );
     },
   },
 });
