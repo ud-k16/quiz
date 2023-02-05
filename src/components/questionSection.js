@@ -4,11 +4,11 @@ import { displayQuestion, updateAnswer, userChoice } from '../store/reducer';
 import { useState } from 'react';
 
 const QuestionDisplay = ({ setShowResult }) => {
-  const { displayQuestionNumber, questions, totalQuestions, userAnswer } =
-    useSelector((state) => state);
+  const { displayQuestionNumber, questions, totalQuestions } = useSelector(
+    (state) => state
+  );
   const isAnswered = questions[displayQuestionNumber].userChoice != -1;
   const dispatch = useDispatch();
-  const [selected, setSelected] = useState(isAnswered);
 
   const AnswerOptions = ({ setSelected }) => {
     return (
@@ -23,7 +23,6 @@ const QuestionDisplay = ({ setShowResult }) => {
               key={index}
               onChange={(event) => {
                 dispatch(userChoice(event.target.value));
-                // setSelected(true);
               }}
             />
           );
@@ -35,7 +34,7 @@ const QuestionDisplay = ({ setShowResult }) => {
   return (
     <div className="questionSection">
       <div>{questions[displayQuestionNumber].question}</div>
-      <AnswerOptions setSelected={setSelected} />
+      <AnswerOptions />
       <Button
         variant="contained"
         onClick={() => {
