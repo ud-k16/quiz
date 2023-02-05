@@ -41,6 +41,7 @@ const QuestionDisplay = ({ setShowResult }) => {
             dispatch(displayQuestion(displayQuestionNumber + 1));
           else setShowResult(true);
         }}
+        style={{ width: '20%' }}
       >
         save And Continue
       </Button>

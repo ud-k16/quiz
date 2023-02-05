@@ -13,16 +13,20 @@ h1 {
 .questionSection {
   width: 70%;
   height: 100%;
-  background-color: rgb(223, 203, 199);
+  background-color: rgb(197, 207, 200);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 .toggleSection {
   width: 30%;
-  height: 50%;
-  /* background-color: 'white'; */
-  /* display: flex;
-  flex-direction: column; */
-}
+  height: 100%;
+  background-color: rgb(197, 207, 200);
 
+  padding-top: 3%;
+}
+.optionContainer {
+}
 /* .iconsSize {
   width: 100px;
   height: 100px;

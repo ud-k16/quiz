@@ -9,22 +9,24 @@ const ToggleDisplay = () => {
 
   return (
     <div className="toggleSection">
-      {questions.map((data, index) => {
-        const answered = userAnswer.includes(index);
-        return (
-          <Button
-            variant={answered ? 'contained' : 'outlined'}
-            key={index}
-            onClick={() => {
-              answered
-                ? dispatch(displayQuestion(index))
-                : window.alert('cannot navigate to an un answered question');
-            }}
-          >
-            {index + 1}
-          </Button>
-        );
-      })}
+      <div className="optionContainer">
+        {questions.map((data, index) => {
+          const answered = userAnswer.includes(index);
+          return (
+            <Button
+              variant={answered ? 'contained' : 'outlined'}
+              key={index}
+              onClick={() => {
+                answered
+                  ? dispatch(displayQuestion(index))
+                  : window.alert('cannot navigate to an un answered question');
+              }}
+            >
+              {index + 1}
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 };
