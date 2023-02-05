@@ -23,7 +23,7 @@ const QuestionDisplay = ({ setShowResult }) => {
               key={index}
               onChange={(event) => {
                 dispatch(userChoice(event.target.value));
-                setSelected(true);
+                // setSelected(true);
               }}
             />
           );
@@ -42,11 +42,9 @@ const QuestionDisplay = ({ setShowResult }) => {
           if (displayQuestionNumber != totalQuestions - 1)
             dispatch(displayQuestion(displayQuestionNumber + 1));
           else setShowResult(true);
-          // dispatch(updateAnswer(displayQuestionNumber));
-          // setSelected(false);
         }}
         style={{ width: '20%' }}
-        disabled={!selected}
+        disabled={!isAnswered}
       >
         save And Continue
       </Button>
