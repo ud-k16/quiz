@@ -4,7 +4,7 @@ import { displayQuestion } from '../store/reducer';
 import { Button } from '@mui/material';
 
 const ToggleDisplay = () => {
-  const { questions, userAnswer } = useSelector((state) => state);
+  const { questions } = useSelector((state) => state);
 
   const dispatch = useDispatch();
 
@@ -23,6 +23,11 @@ const ToggleDisplay = () => {
                 answered
                   ? dispatch(displayQuestion(index))
                   : window.alert('cannot navigate to an un answered question');
+              }}
+              style={{
+                borderColor: 'black',
+                margin: 10,
+                color: answered ? 'white' : 'black',
               }}
             >
               {index + 1}
