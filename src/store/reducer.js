@@ -8,7 +8,7 @@ const initialState = {
   questions: [
     {
       question: 'Who is the President of India',
-      choices: ['Modi', 'Halimah', 'Biden', 'None of the above'],
+      choices: ['Modi', 'Halimah', 'Rishi', 'None of the above'],
       type: 'MCQs',
       correctAnswer: 'Modi',
       userChoice: -1,

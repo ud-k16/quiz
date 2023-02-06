@@ -1,7 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Radio, FormControl, FormControlLabel } from '@mui/material';
+import {
+  Button,
+  Radio,
+  FormControl,
+  FormControlLabel,
+  RadioGroup,
+} from '@mui/material';
 import { displayQuestion, updateAnswer, userChoice } from '../store/reducer';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const QuestionDisplay = ({ setShowResult }) => {
   const { displayQuestionNumber, questions, totalQuestions } = useSelector(
@@ -10,31 +16,37 @@ const QuestionDisplay = ({ setShowResult }) => {
   const isAnswered = questions[displayQuestionNumber].userChoice != -1;
   const dispatch = useDispatch();
 
-  const AnswerOptions = ({ setSelected }) => {
-    return (
-      <FormControl>
-        {questions[displayQuestionNumber].choices.map((option, index) => {
-          return (
-            <FormControlLabel
-              value={index}
-              control={<Radio />}
-              label={option}
-              labelPlacement="end"
-              key={index}
-              onChange={(event) => {
-                dispatch(userChoice(event.target.value));
-              }}
-            />
-          );
-        })}
-      </FormControl>
-    );
-  };
-
   return (
     <div className="questionSection">
       <div>{questions[displayQuestionNumber].question}</div>
-      <AnswerOptions />
+
+      <FormControl>
+        <RadioGroup
+          onChange={(event) => {
+            dispatch(userChoice(event.target.value));
+          }}
+        >
+          {questions[displayQuestionNumber].choices.map((option, index) => {
+            return (
+              <FormControlLabel
+                value={index}
+                control={
+                  <Radio
+                    defaultChecked={false}
+                    checked={
+                      questions[displayQuestionNumber].userChoice == index
+                    }
+                  />
+                }
+                label={option}
+                labelPlacement="end"
+                key={index}
+                name={'radio'}
+              />
+            );
+          })}
+        </RadioGroup>
+      </FormControl>
       <Button
         variant="contained"
         onClick={() => {
