@@ -7,28 +7,28 @@ const initialState = {
   perQuestionScore: 1,
   questions: [
     {
-      question: 'Who is the President of India',
+      question: 'Who is the President of India ?',
       choices: ['Modi', 'Halimah', 'Rishi', 'None of the above'],
       type: 'MCQs',
       correctAnswer: 'Modi',
       userChoice: -1,
     },
     {
-      question: 'Who is the President of UAE',
+      question: 'Who is the President of UAE ?',
       choices: ['Modi', 'Halimah', 'Biden', 'None of the above'],
       type: 'MCQs',
       correctAnswer: 'None of the above',
       userChoice: -1,
     },
     {
-      question: 'Who is the President of USA',
+      question: 'Who is the President of USA ?',
       choices: ['Modi', 'Halimah', 'Biden', 'None of the above'],
       type: 'MCQs',
       correctAnswer: 'Biden',
       userChoice: -1,
     },
     {
-      question: 'Who is the President of Singapore',
+      question: 'Who is the President of Singapore ?',
       choices: ['Modi', 'Halimah', 'Biden', 'None of the above'],
       type: 'MCQs',
       correctAnswer: 'Halimah',

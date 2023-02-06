@@ -7,7 +7,6 @@ import {
   RadioGroup,
 } from '@mui/material';
 import { displayQuestion, updateAnswer, userChoice } from '../store/reducer';
-import { useState, useRef } from 'react';
 
 const QuestionDisplay = ({ setShowResult }) => {
   const { displayQuestionNumber, questions, totalQuestions } = useSelector(
@@ -18,7 +17,11 @@ const QuestionDisplay = ({ setShowResult }) => {
 
   return (
     <div className="questionSection">
-      <div>{questions[displayQuestionNumber].question}</div>
+      <div className="questionContainer">
+        {`${displayQuestionNumber + 1}. ${
+          questions[displayQuestionNumber].question
+        }`}
+      </div>
 
       <FormControl>
         <RadioGroup
@@ -42,6 +45,7 @@ const QuestionDisplay = ({ setShowResult }) => {
                 labelPlacement="end"
                 key={index}
                 name={'radio'}
+                className="options"
               />
             );
           })}
