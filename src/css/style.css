@@ -27,6 +27,19 @@ h1 {
 }
 .optionContainer {
 }
+.resultbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 30%;
+  /* position: absolute; */
+}
+.result {
+  font-size: larger;
+}
 /* .iconsSize {
   width: 100px;
   height: 100px;

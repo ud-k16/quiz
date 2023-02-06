@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { userChoice } from '../store/reducer';
+import '../css/style.css';
 
 const Result = (props) => {
   const { questions, totalQuestions } = useSelector((state) => state);
@@ -14,10 +15,12 @@ const Result = (props) => {
   };
 
   return (
-    <>
-      <div> Your Score</div>
-      <div>{`${calculateResult()}/${totalQuestions}`}</div>;
-    </>
+    <div className="resultbox">
+      <div>
+        <h1>Your Score</h1>
+      </div>
+      <div className="result">{`${calculateResult()}/${totalQuestions}`}</div>
+    </div>
   );
 };
 
