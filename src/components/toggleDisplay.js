@@ -12,16 +12,18 @@ const ToggleDisplay = () => {
     <div className="toggleSection">
       <div className="optionContainer">
         {questions.map((data, index) => {
-          // const answered = userAnswer.includes(index);
+          //answered variable is used in marking if question answered or not ,
+          //so to enabling navigation to answered question otherwise restricting user from moving to an unanswered question
           const answered = questions[index].userChoice != -1;
 
           return (
             <Button
               variant={answered ? 'contained' : 'outlined'}
               key={index}
+              //responding to user click on the question number if that question is viewable or restricted based on if it is answered criteria.
               onClick={() => {
                 answered
-                  ? dispatch(displayQuestion(index))
+                  ? dispatch(displayQuestion(index)) //displayQuestion is an state reducer[state variable:displayQuestionNumber] indicating which question number to display
                   : window.alert('cannot navigate to an un answered question');
               }}
               style={{
